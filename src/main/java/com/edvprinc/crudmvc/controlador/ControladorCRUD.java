@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author garfi
  */
-public class ControladorCRUD implements ActionListener, KeyListener {
+public final class ControladorCRUD implements ActionListener, KeyListener {
 
     private JFCrud vistaCRUD = new JFCrud();
     private ClienteDAO modeloCRUD = new ClienteDAO();
@@ -79,10 +79,9 @@ public class ControladorCRUD implements ActionListener, KeyListener {
     }
 
     public void cleanTabla(JTable pTablaD) {
-        // DefaultTableModel dm = (DefaultTableModel) getModel();
         DefaultTableModel dm = (DefaultTableModel) (pTablaD.getModel());
         int rowCount = dm.getRowCount();
-//Remove rows one by one from the end of the table
+        //Remove rows one by one from the end of the table
         for (int i = rowCount - 1; i >= 0; i--) {
             dm.removeRow(i);
         }
@@ -140,7 +139,7 @@ public class ControladorCRUD implements ActionListener, KeyListener {
         }
 // </editor-fold>
 
-        // <editor-fold defaultstate="collapsed" desc="Aplicar Listar">
+    // <editor-fold defaultstate="collapsed" desc="Aplicar Listar">
         if (e.getSource() == vistaCRUD.jBtnListar) {
             try {
                 LlenarTabla(vistaCRUD.jTDatos);
@@ -151,7 +150,7 @@ public class ControladorCRUD implements ActionListener, KeyListener {
         }
         // </editor-fold>
 
-        // <editor-fold defaultstate="collapsed" desc="Aplicar Editar">
+    // <editor-fold defaultstate="collapsed" desc="Aplicar Editar">
         if (e.getSource() == vistaCRUD.jBtnEditar) {
             vistaCRUD.jBtnCancel.setEnabled(true);
             vistaCRUD.jBtnGEdit.setEnabled(true);
@@ -178,7 +177,7 @@ public class ControladorCRUD implements ActionListener, KeyListener {
         }
 // </editor-fold>
 
-        // <editor-fold defaultstate="collapsed" desc="Postear Data (jBtnGEdit)">
+    // <editor-fold defaultstate="collapsed" desc="Postear Data (jBtnGEdit)">
         if (e.getSource() == vistaCRUD.jBtnGEdit) {
             try {
                 int codClienteN = Integer.parseInt(vistaCRUD.jTxtCodClienteN.getText());
@@ -206,7 +205,7 @@ public class ControladorCRUD implements ActionListener, KeyListener {
         }
         // </editor-fold>
 
-        // <editor-fold defaultstate="collapsed" desc="Cancelar edicion">
+    // <editor-fold defaultstate="collapsed" desc="Cancelar edicion">
         if (e.getSource() == vistaCRUD.jBtnCancel) {
             limpiarElementos();
             vistaCRUD.jBtnRegistrar.setEnabled(true);
@@ -217,7 +216,7 @@ public class ControladorCRUD implements ActionListener, KeyListener {
         }
         // </editor-fold>
 
-        // <editor-fold defaultstate="collapsed" desc="Aplicar Borrar">
+    // <editor-fold defaultstate="collapsed" desc="Aplicar Borrar">
         if (e.getSource() == vistaCRUD.jBtnBorrar) {
             int filaInicio = vistaCRUD.jTDatos.getSelectedRow();
             int numFS = vistaCRUD.jTDatos.getSelectedRowCount();
@@ -267,7 +266,7 @@ public class ControladorCRUD implements ActionListener, KeyListener {
     public void keyTyped(KeyEvent e) {
         if (e.getSource() == vistaCRUD.jTxtCodClienteN) {
             char c = e.getKeyChar();
-            if (c <'0' || c > '9') {
+            if (c < '0' || c > '9') {
                 e.consume();
             }
         }

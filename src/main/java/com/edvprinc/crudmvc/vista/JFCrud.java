@@ -5,7 +5,7 @@
  */
 package com.edvprinc.crudmvc.vista;
 
-import com.edvprinc.crudmvc.modelo.Conexion;
+import com.edvprinc.crudmvc.general.Conexion;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

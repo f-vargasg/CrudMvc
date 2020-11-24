@@ -5,6 +5,7 @@
  */
 package com.edvprinc.crudmvc.modelo;
 
+import com.edvprinc.crudmvc.general.Conexion;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;

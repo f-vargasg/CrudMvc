@@ -87,7 +87,7 @@ public final class ControladorCRUD implements ActionListener, KeyListener {
         }
     }
 
-    public void LlenarTabla(JTable pTabla) throws Exception {
+    public void llenarTabla(JTable pTabla) throws Exception {
         // DefaultTableModel modeloT = new DefaultTableModel();
 
         // tablaD.setModel(modeloT);
@@ -142,7 +142,7 @@ public final class ControladorCRUD implements ActionListener, KeyListener {
     // <editor-fold defaultstate="collapsed" desc="Aplicar Listar">
         if (e.getSource() == vistaCRUD.jBtnListar) {
             try {
-                LlenarTabla(vistaCRUD.jTDatos);
+                llenarTabla(vistaCRUD.jTDatos);
                 JOptionPane.showMessageDialog(null, "Lista de Registros");
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.toString() + " error");
@@ -241,7 +241,7 @@ public final class ControladorCRUD implements ActionListener, KeyListener {
                     }
                 }
                 try {
-                    LlenarTabla(vistaCRUD.jTDatos);
+                    llenarTabla(vistaCRUD.jTDatos);
                 } catch (Exception ex) {
                     Logger.getLogger(ControladorCRUD.class.getName()).log(Level.SEVERE, null, ex);
                 }
